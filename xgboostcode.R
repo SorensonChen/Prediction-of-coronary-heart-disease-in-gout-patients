@@ -30,7 +30,7 @@ dtest <- xgb.DMatrix(data = testset4$data, label = testset4$label)
 
 #train model
 set.seed(12)
-xgb <- xgboost(data = dtrain,max_depth=50, eta=0.25,objective='binary:logistic', nround=17,eval_metric = "auc")
+xgb <- xgb.train(data = dtrain,max_depth=50, eta=0.25,objective='binary:logistic', nround=17,eval_metric = "auc")
 
 #predict
 pre_xgb = predict(xgb,newdata = dtest)
